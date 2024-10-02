@@ -1,0 +1,165 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboards",
+      "icon": "menu-icon tf-icons bx bx-home-smile",
+      "slug": "dashboard",
+      "submenu": [
+        {
+          "url": "/",
+          "name": "Analisis",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+
+    {
+      "menuHeader": "Configuración perfil"
+    },
+    {
+      "name": "Cuenta",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "pages/account-settings-account",
+          "name": "Account",
+          "slug": "pages-account-settings-account"
+        },
+        {
+          "url": "pages/account-settings-notifications",
+          "name": "Notifications",
+          "slug": "pages-account-settings-notifications"
+        }
+      ]
+    },
+    {
+      "name": "Authentications",
+      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "slug": "auth",
+      "submenu": [
+        {
+          "url": "auth/login-basic",
+          "name": "Login",
+          "slug": "auth-login-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/register-basic",
+          "name": "Register",
+          "slug": "auth-register-basic",
+          "target": "_blank"
+        },
+        {
+          "url": "auth/forgot-password-basic",
+          "name": "Forgot Password",
+          "slug": "auth-forgot-password-basic",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "name": "Misc",
+      "icon": "menu-icon tf-icons bx bx-cube-alt",
+      "slug": "pages-misc",
+      "submenu": [
+        {
+          "url": "pages/misc-error",
+          "name": "Error",
+          "slug": "pages-misc-error",
+          "target": "_blank"
+        },
+        {
+          "url": "pages/misc-under-maintenance",
+          "name": "Under Maintenance",
+          "slug": "pages-misc-under-maintenance",
+          "target": "_blank"
+        }
+      ]
+    },
+
+    {
+      "menuHeader": "Gestión formularios"
+    },
+    {
+      "name": "Encuesta",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "forms",
+      "submenu": [
+        {
+          "url": "/encuesta",
+          "name": "Crear encuesta",
+          "slug": "nueva.encuesta"
+        },
+        {
+          "url": "/encuestas",
+          "name": "Lista de encuestas",
+          "slug": "encuestas.lista"
+        }
+      ]
+    },
+    {
+      "name": "Categorias",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "forms",
+      "submenu": [
+        {
+          "url": "/categoria",
+          "name": "Crear categoria",
+          "slug": "nueva.categoria"
+        },
+        {
+          "url": "/categorias",
+          "name": "Ver categorias",
+          "slug": "categorias.lista"
+        }
+      ]
+    },
+    {
+      "name": "Preguntas",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "forms",
+      "submenu": [
+        {
+          "url": "/pregunta",
+          "name": "Crear preguntas",
+          "slug": "nueva.pregunta"
+        },
+        {
+          "url": "/preguntas",
+          "name": "Ver preguntas",
+          "slug": "preguntas.lista"
+        }
+      ]
+    },
+    {
+      "name": "Respuestas",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "forms", 
+      "submenu": [
+        {
+          "url": "forms/basic-inputs",
+          "name": "Ver respuestas",
+          "slug": "forms-basic-inputs"
+        }
+      ]
+    },
+    {
+      "url": "tables/basic",
+      "icon": "menu-icon tf-icons bx bx-table",
+      "name": "Tables",
+      "slug": "tables-basic"
+    },
+    {
+      "menuHeader": "Información"
+    },
+    {
+      "url": "https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/laravel-introduction.html",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Documentation",
+      "slug": "documentation",
+      "target": "_blank"
+    }
+  ]
+}
