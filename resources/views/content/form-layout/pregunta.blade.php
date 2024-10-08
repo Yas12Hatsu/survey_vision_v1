@@ -26,7 +26,11 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="tipo">Tipo de Pregunta</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="tipo" name="tipo" value="{{ old('tipo', $pregunta->tipo) }}" required />
+                            <select class="form-select" id="tipo" name="tipo" required>
+                                <option value="">Selecciona un tipo</option>
+                                <option value="cuantitativa" {{ old('tipo', $pregunta->tipo) == 'cuantitativa' ? 'selected' : '' }}>Cuantitativa</option>
+                                <option value="cualitativa" {{ old('tipo', $pregunta->tipo) == 'cualitativa' ? 'selected' : '' }}>Cualitativa</option>
+                            </select>
                             @error('tipo')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

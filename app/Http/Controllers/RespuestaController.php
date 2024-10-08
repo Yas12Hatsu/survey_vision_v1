@@ -16,6 +16,7 @@ class RespuestaController extends Controller
 
     public function storeAPI(Request $request)
     {
+        dd($request->all()); // Esto detiene la ejecución y muestra los datos
         $request->validate([
             'id_encuesta' => 'required|exists:encuestas,id',
             'id_pregunta' => 'required|exists:preguntas,id',
@@ -26,58 +27,4 @@ class RespuestaController extends Controller
         $respuesta = Respuesta::create($request->all());
         return response()->json($respuesta, 201);
     }
-
-    /*public function create()
-    {
-        $surveys = Survey::all();
-        $questions = Question::all();
-        return view('answers.create', compact('surveys', 'questions'));
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'id_encuesta' => 'required|exists:surveys,id',
-            'id_pregunta' => 'required|exists:questions,id',
-            'respuesta_cuanti' => 'nullable|integer|between:1,5',
-            'respuesta_cuali' => 'nullable|string',
-        ]);
-
-        Answer::create($request->all());
-
-        return redirect()->route('answers.index')->with('success', 'Answer created successfully.');
-    }
-
-    public function show(Answer $answer)
-    {
-        return view('answers.show', compact('answer'));
-    }
-
-    public function edit(Answer $answer)
-    {
-        $surveys = Survey::all();
-        $questions = Question::all();
-        return view('answers.edit', compact('answer', 'surveys', 'questions'));
-    }
-
-    public function update(Request $request, Answer $answer)
-    {
-        $request->validate([
-            'id_encuesta' => 'required|exists:surveys,id',
-            'id_pregunta' => 'required|exists:questions,id',
-            'respuesta_cuanti' => 'nullable|integer|between:1,5',
-            'respuesta_cuali' => 'nullable|string',
-        ]);
-
-        $answer->update($request->all());
-
-        return redirect()->route('answers.index')->with('success', 'Answer updated successfully.');
-    }
-
-    public function destroy(Answer $answer)
-    {
-        $answer->delete();
-
-        return redirect()->route('answers.index')->with('success', 'Answer deleted successfully.');
-    }*/
 }

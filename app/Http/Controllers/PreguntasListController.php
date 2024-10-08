@@ -14,7 +14,7 @@ class PreguntasListController extends Controller
      */
     public function index()
     {
-        $preguntas = Pregunta::all();
+        $preguntas = Pregunta::with('categoria')->get();
         return response()->json($preguntas);
     }
 
