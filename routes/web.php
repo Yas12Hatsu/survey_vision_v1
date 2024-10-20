@@ -105,3 +105,24 @@ Route::delete('/pregunta/delete/{id}', [PreguntaController::class, 'delete'])
 
 Route::get('/respuestas', [PreguntaController::class, 'list'])
     ->name('respuestas.lista');
+
+//RUTA PARA VER LA ENCUESTA DESDE LA VISION DEL USUARIO 
+Route::get('/encuestaUsuario', [RespuestaController::class, 'index'])
+    ->name('encuesta.usuario');
+
+Route::post('respuesta/guardar', [RespuestaController::class, 'storeResponse'])
+    ->name('respuesta.guardar');
+
+
+    
+    Route::get('/token', function (Request $request) {
+        // Obtener el token CSRF desde la sesión
+        $token = $request->session()->token(); 
+    
+        // También puedes usar la función csrf_token()
+        $tokenAlternative = csrf_token(); 
+    
+        // Retornar el token como respuesta JSON (o simplemente retornarlo de otra forma)
+        return response()->json(['csrf_token' => $token]);
+    });
+    

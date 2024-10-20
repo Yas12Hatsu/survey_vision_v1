@@ -5,26 +5,37 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Respuesta;
+use App\Models\Pregunta;
 
 class RespuestaController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $respuestas = Respuesta::all();
-        return response()->json($respuestas);
+        $preguntas = Pregunta::with('categoria')->get();
+        return view('content.form-layout.encuestaUsuario', compact('preguntas'));
     }
 
-    public function storeAPI(Request $request)
+    public function storeResponse(Request $req)
     {
-        dd($request->all()); // Esto detiene la ejecución y muestra los datos
-        $request->validate([
-            'id_encuesta' => 'required|exists:encuestas,id',
-            'id_pregunta' => 'required|exists:preguntas,id',
-            'respuesta_cuanti' => 'nullable|integer|min:1|max:5',
+        // Validar los datos de la solicitud
+        $req->validate([
+            'id_encuesta' => 'required|integer', // Asegúrate de que se pase
+            'id_pregunta' => 'required|exists:pregunta,id',
+            'respuesta_cuanti' => 'nullable|integer|between:1,5',
             'respuesta_cuali' => 'nullable|string',
         ]);
 
-        $respuesta = Respuesta::create($request->all());
-        return response()->json($respuesta, 201);
+        // Crear una nueva respuesta en la base de datos
+        $respuesta = Respuesta::create([
+            'id_encuesta' => $req->id_encuesta, // Usar el id_encuesta enviado
+            'id_pregunta' => $req->id_pregunta,
+            'respuesta_cuanti' => $req->respuesta_cuanti,
+            'respuesta_cuali' => $req->respuesta_cuali,
+        ]);
+
+        // Devolver una respuesta JSON exitosa
+        return response()->json(['message' => 'Respuesta guardada correctamente.', 'data' => $respuesta]);
     }
+
+    
 }

@@ -14,8 +14,11 @@ class PreguntasListController extends Controller
      */
     public function index()
     {
+        // Obtener todas las preguntas junto con sus categorías
         $preguntas = Pregunta::with('categoria')->get();
-        return response()->json($preguntas);
+        return view('content.form-layout.encuestaUsuario', compact('preguntas'));
+        //$preguntas = Pregunta::with('categoria')->get();
+        //return response()->json($preguntas);
     }
 
     /**

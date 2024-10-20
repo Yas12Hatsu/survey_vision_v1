@@ -146,6 +146,18 @@
       ]
     },
     {
+      "name": "Encuesta Usuario",
+      "icon": "menu-icon tf-icons bx bx-detail",
+      "slug": "forms", 
+      "submenu": [
+        {
+          "url": "/encuestaUsuario",
+          "name": "Encuesta de satisfaccion",
+          "slug": "encuesta.usuario"
+        }
+      ]
+    },
+    {
       "url": "tables/basic",
       "icon": "menu-icon tf-icons bx bx-table",
       "name": "Tables",
