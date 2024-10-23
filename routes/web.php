@@ -21,6 +21,7 @@ use App\Http\Controllers\EncuestaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\RespuestaController;
+use App\Http\Controllers\PorcentajeEncuestasDay;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -113,7 +114,9 @@ Route::get('/encuestaUsuario', [RespuestaController::class, 'index'])
 Route::post('respuesta/guardar', [RespuestaController::class, 'storeResponse'])
     ->name('respuesta.guardar');
 
-
+//RUTA PARA OBTENER PORCENTAJE DE ENCUESTAS
+Route::get('/', [PorcentajeEncuestasDay::class, 'index'])
+    ->name('porcentaje.dia');
     
     Route::get('/token', function (Request $request) {
         // Obtener el token CSRF desde la sesión

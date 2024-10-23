@@ -22,8 +22,10 @@
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary mb-3">Felicidades! 🎉</h5>
-            <p class="mb-6">Se han realizado el 72% de encuestas el día de hoy.<br>Revisa que es lo que han comentado tus clientes hoy</p>
-
+            <p class="mb-6">
+              Se han realizado el {{ number_format($porcentajeEncuestasHoy) }}% de encuestas el día de hoy.<br>
+              Revisa que es lo que han comentado tus clientes hoy 🙋‍♂️
+            </p>
             <a href="javascript:;" class="btn btn-sm btn-outline-primary">Revisar respuestas</a>
           </div>
         </div>
@@ -44,18 +46,9 @@
               <div class="avatar flex-shrink-0">
                 <img src="{{asset('assets/img/icons/unicons/chart-success.png')}}" alt="chart success" class="rounded">
               </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
             </div>
-            <p class="mb-1">Encuestas realizadas</p>
-            <h4 class="card-title mb-3">$(idk)</h4>
+            <p class="mb-1">Respuestas Recibidas</p>
+            <h1 class="card-title mb-3">{{ $totalRespuestasRecibidas }}</h1>
             <!--<small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +72.80%</small>-->
           </div>
         </div>
@@ -78,93 +71,102 @@
               </div>
             </div>
             <p class="mb-1">Promedio calificaciones</p>
-            <h4 class="card-title mb-3">% (idk)</h4>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesCalidadPrecio ?? 0, 2) }}%</h4>
             <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i>Calidad-Precio</small>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Total Revenue -->
   <div class="col-12 col-xxl-8 order-2 order-md-3 order-xxl-2 mb-6">
     <div class="card">
-      <div class="row row-bordered g-0">
-        <div class="col-lg-8">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <div class="card-title mb-0">
-              <h5 class="m-0 me-2">Tendencias de participación</h5>
-            </div>
-            <div class="dropdown">
-              <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="totalRevenue">
-                <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                <a class="dropdown-item" href="javascript:void(0);">Share</a>
-              </div>
-            </div>
-          </div>
-          <div id="totalRevenueChart" class="px-3"></div>
+        <div class="card-header">
+            <h5 class="m-0">Tendencias de Participación</h5>
         </div>
-        <div class="col-lg-4 d-flex align-items-center">
-          <div class="card-body px-xl-9">
-            <div class="text-center mb-6">
-              <div class="btn-group">
-                <button type="button" class="btn btn-outline-primary">
-                  <script>
-                  document.write(new Date().getFullYear() - 1)
-
-                  </script>
-                </button>
-                <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:void(0);">2021</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2020</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2019</a></li>
-                </ul>
-              </div>
+        <div class="card-body">
+            <!-- Selector de categorías -->
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Selecciona una Categoría:</label>
+                <select id="categoria" class="form-select" onchange="updateChart()">
+                    @foreach ($respuestasPorCategoria as $categoria => $respuestas)
+                        <option value="{{ $categoria }}">{{ $categoria }}</option>
+                    @endforeach
+                </select>
             </div>
 
-            <div id="growthChart"></div>
-            <div class="d-flex gap-3 justify-content-between">
-              <div class="d-flex">
-                <div class="avatar me-2">
-                  <span class="avatar-initial rounded-2 bg-label-primary"><i class="bx bx-dollar bx-lg text-primary"></i></span>
-                </div>
-                <div class="d-flex flex-column">
-                  <small>
-                    <script>
-                    document.write(new Date().getFullYear() - 1)
-
-                    </script>
-                  </small>
-                  <h6 class="mb-0">$32.5k</h6>
-                </div>
-              </div>
-              <div class="d-flex">
-                <div class="avatar me-2">
-                  <span class="avatar-initial rounded-2 bg-label-info"><i class="bx bx-wallet bx-lg text-info"></i></span>
-                </div>
-                <div class="d-flex flex-column">
-                  <small>
-                    <script>
-                    document.write(new Date().getFullYear() - 2)
-
-                    </script>
-                  </small>
-                  <h6 class="mb-0">$41.2k</h6>
-                </div>
-              </div>
-            </div>
-          </div>
+            <canvas id="totalRevenueChart"></canvas>
         </div>
-      </div>
     </div>
-  </div>
-  <!--/ Total Revenue -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Datos de las respuestas por categoría
+    const respuestasPorCategoria = @json($respuestasPorCategoria);
+
+    // Inicializar la gráfica
+    const ctx = document.getElementById('totalRevenueChart').getContext('2d');
+    let totalRevenueChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Muy Insatisfecho 😟', 'Insatisfecho 😐', 'Neutral 🙂', 'Satisfecho 😃', 'Muy Satisfecho 😃'],
+            datasets: [{
+                label: 'Cantidad de Respuestas',
+                data: [0, 0, 0, 0, 0], // Inicializa con 0
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 10, // Valor máximo en el eje Y, asumiendo un total de 50 encuestas
+                    title: {
+                        display: true,
+                        text: 'Cantidad de Respuestas'
+                    }
+                }
+            }
+        }
+    });
+
+    // Función para actualizar la gráfica según la categoría seleccionada
+    function updateChart() {
+        const categoriaSeleccionada = document.getElementById('categoria').value;
+        const data = respuestasPorCategoria[categoriaSeleccionada];
+
+        // Actualizar los datos en la gráfica
+        totalRevenueChart.data.datasets[0].data = [
+            data[1] || 0, // Muy Insatisfecho
+            data[2] || 0, // Insatisfecho
+            data[3] || 0, // Neutral
+            data[4] || 0, // Satisfecho
+            data[5] || 0  // Muy Satisfecho
+        ];
+        totalRevenueChart.update();
+    }
+
+    // Inicializar la gráfica con la primera categoría
+    updateChart();
+</script>
+
+
   <div class="col-12 col-md-8 col-lg-12 col-xxl-4 order-3 order-md-2">
     <div class="row">
       <div class="col-6 mb-6">
@@ -185,7 +187,7 @@
               </div>
             </div>
             <p class="mb-1">Promedio Calificaciones</p>
-            <h4 class="card-title mb-3">%(idk)</h4>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAmbiente ?? 0, 2) }}%</h4>
             <small class="text-danger fw-medium"><i class='bx bx-down-arrow-alt'></i>Ambiente</small>
           </div>
         </div>
@@ -208,7 +210,7 @@
               </div>
             </div>
             <p class="mb-1">Promedio calificaciones</p>
-            <h4 class="card-title mb-3">$14,857</h4>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAtencion ?? 0, 2) }}%</h4>
             <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i>Atención personal</small>
           </div>
         </div>
@@ -220,11 +222,15 @@
               <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                 <div class="card-title mb-6">
                   <h5 class="text-nowrap mb-1">Comentarios Recientes </h5>
-                  <span class="badge bg-label-warning">Notificaciones</span>
+                  <span class="badge bg-label-warning">Respuestas abiertas</span>
                 </div>
-                <div class="mt-sm-auto">
-                  <span class="text-success text-nowrap fw-medium"><i class='bx bx-up-arrow-alt'></i> 68.2%</span>
-                  <h4 class="mb-0">$84,686k</h4>
+                <!-- Agregar la sección para mostrar los últimos comentarios -->
+                <div class="mt-4">
+                    <ul class="list-group">
+                        @foreach ($ultimosComentariosCualitativos as $comentario)
+                            <li class="list-group-item">{{ $comentario->respuesta_cuali }}</li>
+                        @endforeach
+                    </ul>
                 </div>
               </div>
               <div id="profileReportChart"></div>
