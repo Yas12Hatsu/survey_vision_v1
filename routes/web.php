@@ -22,6 +22,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\RespuestaController;
 use App\Http\Controllers\PorcentajeEncuestasDay;
+use App\Http\Controllers\AvisoPrivacidadController;
 
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -128,4 +129,14 @@ Route::get('/', [PorcentajeEncuestasDay::class, 'index'])
         // Retornar el token como respuesta JSON (o simplemente retornarlo de otra forma)
         return response()->json(['csrf_token' => $token]);
     });
+
+//RUTA DE AVISO DE PRIVACIDAD
+Route::get('/aviso-privacidad', function () {
+    return view('content.pages.avisoprivacidad');
+});
+
+//RUTA DE VISUALIZACION DE RESPPUESTAS
+Route::get('/respuestas', [RespuestaController::class, 'list'])
+    ->name('respuestas.lista');
+
     

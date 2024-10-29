@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Dashboard Administrador Survey Vision')
+@section('title', 'Survey Vision - Dashboard Administrador')
 
 @section('vendor-style')
 @vite('resources/assets/vendor/libs/apex-charts/apex-charts.scss')
@@ -24,14 +24,14 @@
             <h5 class="card-title text-primary mb-3">Felicidades! 🎉</h5>
             <p class="mb-6">
               Se han realizado el {{ number_format($porcentajeEncuestasHoy) }}% de encuestas el día de hoy.<br>
-              Revisa que es lo que han comentado tus clientes hoy 🙋‍♂️
+              ¡Revisa que es lo que opinan y comentan tus clientes!🙋‍♂️
             </p>
-            <a href="javascript:;" class="btn btn-sm btn-outline-primary">Revisar respuestas</a>
+            <a href="{{ route('respuestas.lista') }}" class="btn btn-sm btn-outline-primary">Revisar respuestas</a>
           </div>
         </div>
         <div class="col-sm-5 text-center text-sm-left">
           <div class="card-body pb-0 px-0 px-md-6">
-            <img src="{{asset('assets/img/illustrations/man-with-laptop.png')}}" height="175" class="scaleX-n1-rtl" alt="View Badge User">
+            <img src="{{asset('assets/img/illustrations/encuesta4.jpg')}}" height="180" class="scaleX-n1-rtl" alt="View Badge User">
           </div>
         </div>
       </div>

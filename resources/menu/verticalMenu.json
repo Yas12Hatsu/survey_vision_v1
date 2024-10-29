@@ -139,9 +139,9 @@
       "slug": "forms", 
       "submenu": [
         {
-          "url": "forms/basic-inputs",
+          "url": "/respuestas",
           "name": "Ver respuestas",
-          "slug": "forms-basic-inputs"
+          "slug": "respuestas.lista"
         }
       ]
     },
@@ -167,10 +167,10 @@
       "menuHeader": "Información"
     },
     {
-      "url": "https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/laravel-introduction.html",
+      "url": "/aviso-privacidad",
       "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Documentation",
-      "slug": "documentation",
+      "name": "Aviso de Privacidad",
+      "slug": "/aviso-privacidad",
       "target": "_blank"
     }
   ]

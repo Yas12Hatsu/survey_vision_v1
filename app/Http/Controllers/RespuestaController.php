@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Respuesta;
 use App\Models\Pregunta;
+use App\Models\Categoria;
 
 class RespuestaController extends Controller
 {
@@ -35,6 +36,29 @@ class RespuestaController extends Controller
 
         // Devolver una respuesta JSON exitosa
         return response()->json(['message' => 'Respuesta guardada correctamente.', 'data' => $respuesta]);
+    }
+
+    public function list(Request $request)
+    {
+        // Obtener todas las categorías
+        $categorias = Categoria::all();
+        
+        // Obtener la categoría seleccionada en el filtro
+        $categoriaSeleccionada = $request->input('categoria');
+        
+        // Obtener respuestas filtradas por categoría (si se selecciona una)
+        $respuestas = Respuesta::with(['pregunta' => function ($query) {
+            $query->with('categoria');
+        }])
+        ->when($categoriaSeleccionada, function ($query) use ($categoriaSeleccionada) {
+            $query->whereHas('pregunta.categoria', function ($q) use ($categoriaSeleccionada) {
+                $q->where('id', $categoriaSeleccionada);
+            });
+        })
+        ->get();
+
+        // Pasar respuestas, categorías y categoría seleccionada a la vista
+        return view('content.form-layout.respuestas', compact('respuestas', 'categorias', 'categoriaSeleccionada'));
     }
 
     
