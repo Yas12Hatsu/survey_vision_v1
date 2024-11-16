@@ -14,6 +14,20 @@
       ]
     },
     {
+      "url": "/",
+      "name": "Power BI",
+      "icon": "menu-icon tf-icons bx bx-bar-chart-alt-2",
+      "slug": "dashboard-powerbi",
+      "submenu": [
+        {
+          "url": "https://app.powerbi.com/view?r=eyJrIjoiZTM5N2EwNWUtMjc5Ni00MTJmLWI1ZjAtNzkyMTZjZjUzZTg0IiwidCI6ImZiOTdkM2I1LTc1YTQtNGQ0Yy1iYmQ1LTQ3MmNmOWYyMWYyYiJ9",
+          "name": "Dasboard de PowerBI",
+          "slug": "dashboard-powerbi",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
       "menuHeader": "Gestión formularios"
     },
     {
