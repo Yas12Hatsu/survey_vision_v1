@@ -17,10 +17,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
 
         .container {
             max-width: 800px;
+            width: 100%;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
@@ -131,6 +133,60 @@
             padding: 10px;
             border: 1px solid #ccc;
         }
+
+        /* Estilos para el aviso de privacidad */
+        .privacy-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .privacy-modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .privacy-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .privacy-modal-header h2 {
+            margin: 0;
+        }
+
+        .close-btn {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +234,37 @@
             <button type="submit" id="submitBtn" style="display: none;">Finalizar</button>
         </form>
     </div>
+
+        <!-- Aviso de Privacidad Modal -->
+        <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-modal-content">
+            <div class="privacy-modal-header">
+                <h2>Aviso de Privacidad</h2>
+                <span class="close-btn" onclick="closePrivacyModal()">&times;</span>
+            </div>
+            <p>En SurveyVision - SmartData BI nos comprometemos a proteger la privacidad de nuestros usuarios. Este aviso de privacidad explica nuestras prácticas en relación con la información recopilada a través de nuestra aplicación web.</p>
+            <h3>Recopilación y Uso de Información</h3>
+            <p>Nuestra aplicación de encuestas de satisfacción no recopila, almacena ni procesa datos personales identificables de los usuarios. Las encuestas que ofrecemos están diseñadas para obtener comentarios sobre la satisfacción del usuario sin requerir información personal.</p>
+            <h3>Información Recopilada</h3>
+            <p>Solo recopilamos respuestas anónimas a las preguntas de nuestras encuestas. Estas respuestas no contienen información personal y se utilizan únicamente con fines estadísticos y de mejora del servicio.</p>
+            <h3>Seguridad</h3>
+            <p>Adoptamos medidas de seguridad adecuadas para proteger la información anónima recopilada a través de nuestra aplicación. Aunque no recopilamos datos personales, nos esforzamos por garantizar la integridad y confidencialidad de toda la información.</p>
+            <h3>Cambios en el Aviso de Privacidad</h3>
+            <p>Nos reservamos el derecho de actualizar este aviso de privacidad en cualquier momento. Cualquier cambio se publicará en esta página, y se indicará la fecha de la última actualización.</p>
+            <h3>Fecha de Efectividad</h3>
+            <p>Este aviso de privacidad es efectivo a partir de Octubre 2024.</p>
+        </div>
+    </div>
+
+    <footer class="content-footer footer bg-footer-theme">
+        <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+      <div class="text-body">
+        © <script>document.write(new Date().getFullYear())</script>, hecho por SmartData BI Consultoría 
+        <a href="{{ (!empty(config('variables.creatorUrl')) ? config('variables.creatorUrl') : '') }}" target="_blank" class="footer-link"><!--{{ (!empty(config('variables.creatorName')) ? config('variables.creatorName') : '') }}--></a>
+        <button onclick="openPrivacyModal()">Aviso de Privacidad</button>
+      </div>
+    </footer>
+    
     <script>
         // JavaScript para manejar la lógica de la encuesta y mostrar mensajes
         let currentQuestionIndex = 0;
@@ -266,6 +353,16 @@
                 errorMessage.style.display = 'block';
             }
         }
+
+        // Funciones para manejar el modal de privacidad
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
     </script>
+
 </body>
 </html>

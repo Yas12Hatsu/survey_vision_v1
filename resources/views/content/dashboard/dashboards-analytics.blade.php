@@ -44,7 +44,7 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between mb-4">
               <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/chart-success.png')}}" alt="chart success" class="rounded">
+                <img src="{{asset('assets/img/icons/unicons/respuestas.png')}}" alt="chart success" class="rounded">
               </div>
             </div>
             <p class="mb-1">Respuestas Recibidas</p>
@@ -58,12 +58,12 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between mb-4">
               <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/wallet-info.png')}}" alt="wallet info" class="rounded">
+                <img src="{{asset('assets/img/icons/unicons/calidad.png')}}" alt="wallet info" class="rounded">
               </div>
               <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!--<button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
+                </button>-->
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
                   <a class="dropdown-item" href="javascript:void(0);">Actualizar</a>
                   <!--<a class="dropdown-item" href="javascript:void(0);">Delete</a>-->
@@ -71,8 +71,8 @@
               </div>
             </div>
             <p class="mb-1">Promedio calificaciones</p>
-            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesCalidadPrecio ?? 0, 2) }}%</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i>Calidad-Precio</small>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesCalidadPrecio ?? 0, 2) }}% ⭐</h4>
+            <small class="fw-medium" style="color: #6a0dad;"><i class=''></i>Calidad-Precio</small>
           </div>
         </div>
       </div>
@@ -174,12 +174,12 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between mb-4">
               <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/paypal.png')}}" alt="paypal" class="rounded">
+                <img src="{{asset('assets/img/icons/unicons/ambien.png')}}" alt="paypal" class="rounded">
               </div>
               <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!--<button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
+                </button>-->
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
                   <a class="dropdown-item" href="javascript:void(0);">View More</a>
                   <a class="dropdown-item" href="javascript:void(0);">Delete</a>
@@ -187,8 +187,8 @@
               </div>
             </div>
             <p class="mb-1">Promedio Calificaciones</p>
-            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAmbiente ?? 0, 2) }}%</h4>
-            <small class="text-danger fw-medium"><i class='bx bx-down-arrow-alt'></i>Ambiente</small>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAmbiente ?? 0, 2) }}% ⭐</h4>
+            <small class="fw-medium" style="color: #6a0dad;"><i class=''></i>Ambiente</small>
           </div>
         </div>
       </div>
@@ -197,21 +197,21 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between mb-4">
               <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded">
+                <img src="{{asset('assets/img/icons/unicons/persona.png')}}" alt="Credit Card" class="rounded">
               </div>
               <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!--<button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
+                </button>-->
                 <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                  <!--<a class="dropdown-item" href="javascript:void(0);">View More</a>
+                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>-->
                 </div>
               </div>
             </div>
             <p class="mb-1">Promedio calificaciones</p>
-            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAtencion ?? 0, 2) }}%</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i>Atención personal</small>
+            <h4 class="card-title mb-3">{{ number_format($promedioCalificacionesAtencion ?? 0, 2) }}% ⭐</h4>
+            <small class="fw-medium" style="color: #6a0dad;"><i class=''></i>Atención personal</small>
           </div>
         </div>
       </div>
@@ -220,12 +220,13 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column gap-10">
               <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                <div class="card-title mb-6">
+              <div class="card-title mb-3 d-flex align-items-center">
+                  <img src="{{ asset('assets/img/icons/unicons/retroalimentacion.png') }}" alt="retroalimentacion" class="rounded me-2" style="width: 32px; height: 32px;">
                   <h5 class="text-nowrap mb-1">Comentarios Recientes </h5>
-                  <span class="badge bg-label-warning">Respuestas abiertas</span>
                 </div>
+                <span class="badge bg-label-warning">Respuestas abiertas - Retroalimentación</span>
                 <!-- Agregar la sección para mostrar los últimos comentarios -->
-                <div class="mt-4">
+                <div class="mt-4 w-100 d-flex">
                     <ul class="list-group">
                         @foreach ($ultimosComentariosCualitativos as $comentario)
                             <li class="list-group-item">{{ $comentario->respuesta_cuali }}</li>
@@ -233,7 +234,7 @@
                     </ul>
                 </div>
               </div>
-              <div id="profileReportChart"></div>
+              <!--<div id="profileReportChart"></div>-->
             </div>
           </div>
         </div>

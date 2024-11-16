@@ -8,82 +8,16 @@
       "submenu": [
         {
           "url": "/",
-          "name": "Analisis",
+          "name": "Principales indicadores",
           "slug": "dashboard-analytics"
         }
       ]
     },
-
-    {
-      "menuHeader": "Configuración perfil"
-    },
-    {
-      "name": "Cuenta",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "pages-account-settings",
-      "submenu": [
-        {
-          "url": "pages/account-settings-account",
-          "name": "Account",
-          "slug": "pages-account-settings-account"
-        },
-        {
-          "url": "pages/account-settings-notifications",
-          "name": "Notifications",
-          "slug": "pages-account-settings-notifications"
-        }
-      ]
-    },
-    {
-      "name": "Authentications",
-      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
-      "slug": "auth",
-      "submenu": [
-        {
-          "url": "auth/login-basic",
-          "name": "Login",
-          "slug": "auth-login-basic",
-          "target": "_blank"
-        },
-        {
-          "url": "auth/register-basic",
-          "name": "Register",
-          "slug": "auth-register-basic",
-          "target": "_blank"
-        },
-        {
-          "url": "auth/forgot-password-basic",
-          "name": "Forgot Password",
-          "slug": "auth-forgot-password-basic",
-          "target": "_blank"
-        }
-      ]
-    },
-    {
-      "name": "Misc",
-      "icon": "menu-icon tf-icons bx bx-cube-alt",
-      "slug": "pages-misc",
-      "submenu": [
-        {
-          "url": "pages/misc-error",
-          "name": "Error",
-          "slug": "pages-misc-error",
-          "target": "_blank"
-        },
-        {
-          "url": "pages/misc-under-maintenance",
-          "name": "Under Maintenance",
-          "slug": "pages-misc-under-maintenance",
-          "target": "_blank"
-        }
-      ]
-    },
-
     {
       "menuHeader": "Gestión formularios"
     },
     {
-      "name": "Encuesta",
+      "name": "ID Encuesta",
       "icon": "menu-icon tf-icons bx bx-detail",
       "slug": "forms",
       "submenu": [
@@ -101,7 +35,7 @@
     },
     {
       "name": "Categorias",
-      "icon": "menu-icon tf-icons bx bx-detail",
+      "icon": "menu-icon tf-icons bx bx-category",
       "slug": "forms",
       "submenu": [
         {
@@ -118,7 +52,7 @@
     },
     {
       "name": "Preguntas",
-      "icon": "menu-icon tf-icons bx bx-detail",
+      "icon": "menu-icon tf-icons bx bx-help-circle",
       "slug": "forms",
       "submenu": [
         {
@@ -135,7 +69,7 @@
     },
     {
       "name": "Respuestas",
-      "icon": "menu-icon tf-icons bx bx-detail",
+      "icon": "menu-icon tf-icons bx bx-message-square-detail",
       "slug": "forms", 
       "submenu": [
         {
@@ -147,13 +81,14 @@
     },
     {
       "name": "Encuesta Usuario",
-      "icon": "menu-icon tf-icons bx bx-detail",
+      "icon": "menu-icon tf-icons bx bx-user-check",
       "slug": "forms", 
       "submenu": [
         {
           "url": "/encuestaUsuario",
           "name": "Encuesta de satisfaccion",
-          "slug": "encuesta.usuario"
+          "slug": "encuesta.usuario",
+          "target": "_blank"
         }
       ]
     },
@@ -162,16 +97,6 @@
       "icon": "menu-icon tf-icons bx bx-table",
       "name": "Tables",
       "slug": "tables-basic"
-    },
-    {
-      "menuHeader": "Información"
-    },
-    {
-      "url": "/aviso-privacidad",
-      "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Aviso de Privacidad",
-      "slug": "/aviso-privacidad",
-      "target": "_blank"
     }
   ]
 }
