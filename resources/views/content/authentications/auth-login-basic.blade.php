@@ -1,6 +1,6 @@
 @extends('layouts/blankLayout')
 
-@section('title', 'Login Basic - Pages')
+@section('title', 'Login - Pages')
 
 @section('page-style')
 @vite([
@@ -23,12 +23,12 @@
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-1">Welcome to {{config('variables.templateName')}}! 👋</h4>
-          <p class="mb-6">Please sign-in to your account and start the adventure</p>
+          <h4 class="mb-1">Bienvenido a {{config('variables.templateName')}}! 👋</h4>
+          <p class="mb-6">Please sign-in to your account and star</p>
 
           <form id="formAuthentication" class="mb-6" action="{{url('/')}}" method="GET">
             <div class="mb-6">
-              <label for="email" class="form-label">Email or Username</label>
+              <label for="email" class="form-label">Correo or Username</label>
               <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus>
             </div>
             <div class="mb-6 form-password-toggle">

@@ -2,7 +2,7 @@
   "menu": [
     {
       "url": "/",
-      "name": "Dashboards",
+      "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-smile",
       "slug": "dashboard",
       "submenu": [

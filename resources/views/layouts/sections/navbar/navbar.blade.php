@@ -40,6 +40,12 @@ $navbarDetached = ($navbarDetached ?? '');
             <a href="http://localhost:3001/analisis_respuestas.html" class="btn btn-primary" target="_blank">Visualizar Análisis de TensorFlow</a>
           </div>
         </div>
+
+        <div class="navbar-nav align-items-center">
+          <div class="nav-item d-flex align-items-center">
+            <a href="http://localhost:3001/analisis_respuestas.html" class="btn btn-primary" target="_blank">Visualizar Dashboard PowerBI</a>
+          </div>
+        </div>
         <!-- /Dashboard Button -->
         <ul class="navbar-nav flex-row align-items-center ms-auto">
 
