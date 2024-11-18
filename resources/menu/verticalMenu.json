@@ -105,12 +105,6 @@
           "target": "_blank"
         }
       ]
-    },
-    {
-      "url": "tables/basic",
-      "icon": "menu-icon tf-icons bx bx-table",
-      "name": "Tables",
-      "slug": "tables-basic"
     }
   ]
 }
